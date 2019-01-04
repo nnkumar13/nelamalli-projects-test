@@ -11,6 +11,7 @@
     <module>scala-examples</module>
     <module>spark-examples</module>
     <module>spark-kafka</module>
+      <module>spark-streaming</module>
   </modules>
   <properties>
     <scala.version>2.11.11</scala.version>
