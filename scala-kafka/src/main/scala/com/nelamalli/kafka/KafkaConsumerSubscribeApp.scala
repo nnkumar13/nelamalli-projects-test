@@ -1,12 +1,10 @@
 package com.nelamalli.kafka
-
 import java.util.{Collections, Properties}
 import java.util.regex.Pattern
 
 import org.apache.kafka.clients.consumer.KafkaConsumer
 
 import scala.collection.JavaConverters._
-
 object KafkaConsumerSubscribeApp extends App {
 
   val props:Properties = new Properties()
@@ -32,6 +30,6 @@ object KafkaConsumerSubscribeApp extends App {
   }catch{
     case e:Exception => e.printStackTrace()
   }finally {
-    consumer.close() // close in finally block
+    consumer.close()
   }
 }

@@ -9,7 +9,7 @@ object KafkaProducerApp extends App {
   props.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer")
   props.put("acks","all")
   val producer = new KafkaProducer[String, String](props)
-  val topic = "topic_text"
+  val topic = "text_topic"
   try {
     for (i <- 0 to 15) {
       val record = new ProducerRecord[String, String](topic, i.toString, "My Site is nelamalli.com " + i)
