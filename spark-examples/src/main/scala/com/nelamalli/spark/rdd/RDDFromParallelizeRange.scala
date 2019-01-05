@@ -23,9 +23,7 @@ object RDDFromParallelizeRange {
     println(rdd6.mkString(","))
 
     val rdd7:Array[Array[Range]] = rdd5.glom().collect()
-
     println("After glom");
-
     rdd7.foreach(f=>{
       println("For each partition")
       f.foreach(f1=>println(f1))

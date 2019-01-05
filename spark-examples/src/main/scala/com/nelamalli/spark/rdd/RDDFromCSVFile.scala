@@ -25,9 +25,6 @@ object RDDFromCSVFile {
     })
 
     rdd2.foreach(a=>println(a.city))
-
-
-
   }
 
 }
