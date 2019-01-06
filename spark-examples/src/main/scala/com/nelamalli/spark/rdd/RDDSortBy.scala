@@ -12,14 +12,15 @@ object RDDSortBy {
       .master("local[3]")
       .appName("SparkByExample")
       .getOrCreate()
+
     val sc = spark.sparkContext
+
     val rdd:RDD[String] = sc.textFile("C://000_Projects/opt/BigData/zipcodes-noheader.csv")
 
     val rddZip:RDD[ZipCode] = rdd.map(f=>{
       val arr = split(f)
       ZipCode(arr(0).toInt,arr(1),arr(3),arr(4))
     })
-
 
     //SortBy
     val rddSort = rddZip.sortBy(f=>f.recordNumber)
@@ -31,11 +32,8 @@ object RDDSortBy {
       Tuple2(f.recordNumber,f.toString)
     })
     rddTuple.sortByKey().collect().foreach(f=>println(f._2))
-
-
-
-    //Partition on zipcode
   }
+
   def split(str:String): Array[String] ={
     str.split(",")
   }
