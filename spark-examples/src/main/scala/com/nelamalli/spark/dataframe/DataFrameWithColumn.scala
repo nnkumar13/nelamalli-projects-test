@@ -8,7 +8,7 @@ object DataFrameWithColumn {
 
     val spark: SparkSession = SparkSession.builder()
       .master("local[1]")
-      .appName("SparkByExample")
+      .appName("SparkByExamples.com")
       .getOrCreate()
 
     val filePath="C://000_Projects/opt/BigData/zipcodes.csv"

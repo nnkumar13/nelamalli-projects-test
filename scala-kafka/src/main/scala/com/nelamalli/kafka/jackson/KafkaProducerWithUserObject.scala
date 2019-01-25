@@ -1,7 +1,9 @@
 package com.nelamalli.kafka.jackson
 import java.util.Properties
+
 import com.nelamalli.kafka.beans.User
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
+import org.apache.kafka.common.serialization.StringSerializer
 object KafkaProducerWithUserObject {
   val props:Properties = new Properties()
   props.put("bootstrap.servers","192.168.1.100:9092")
@@ -19,6 +21,7 @@ object KafkaProducerWithUserObject {
         record.key(), record.value(), metadata.get().partition(),
         metadata.get().offset());
     }
+    StringSerializer
   }catch{
     case e:Exception => e.printStackTrace()
   }finally {

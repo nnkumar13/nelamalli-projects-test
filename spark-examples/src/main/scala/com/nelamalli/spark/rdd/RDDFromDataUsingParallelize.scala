@@ -17,5 +17,6 @@ object RDDFromDataUsingParallelize {
       println("Action: First element: "+rdd.first())
       println("Action: RDD converted to Array[Int] : ")
       rddCollect.foreach(println)
+
   }
 }
