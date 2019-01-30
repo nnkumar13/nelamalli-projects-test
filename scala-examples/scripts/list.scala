@@ -27,5 +27,5 @@ val l7 = l6.sortWith((a,b)=>a.charAt(0) > b.charAt(0))
 println("After Sorting")
 l7.foreach(println)
 
-l6.map
+
 

@@ -8,7 +8,7 @@ object ReadDataFromKafka {
 
     val spark: SparkSession = SparkSession.builder()
       .master("local[1]")
-      .appName("SparkByExample")
+      .appName("https://SparkByExamples.com")
       .getOrCreate()
     val df = spark
       .read
