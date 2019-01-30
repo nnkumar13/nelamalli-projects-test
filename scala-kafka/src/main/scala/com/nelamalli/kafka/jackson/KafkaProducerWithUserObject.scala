@@ -21,7 +21,7 @@ object KafkaProducerWithUserObject {
         record.key(), record.value(), metadata.get().partition(),
         metadata.get().offset());
     }
-    StringSerializer
+
   }catch{
     case e:Exception => e.printStackTrace()
   }finally {
