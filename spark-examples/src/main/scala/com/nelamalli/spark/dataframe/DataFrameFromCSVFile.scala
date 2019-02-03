@@ -11,6 +11,8 @@ object DataFrameFromCSVFile {
       .appName("SparkByExample")
       .getOrCreate()
 
+    spark.sparkContext
+
     val filePath="src/main/resources/zipcodes.csv"
 
     //Chaining multiple options
