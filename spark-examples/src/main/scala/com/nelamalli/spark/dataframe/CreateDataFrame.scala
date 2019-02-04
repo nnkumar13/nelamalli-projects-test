@@ -3,7 +3,7 @@ package com.nelamalli.spark.dataframe
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 
-object DataFrameCreation {
+object CreateDataFrame {
 
   def main(args:Array[String]):Unit={
 
