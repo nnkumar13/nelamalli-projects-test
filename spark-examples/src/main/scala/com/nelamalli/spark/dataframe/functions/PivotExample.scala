@@ -15,18 +15,28 @@ object PivotExample {
       ("Carrots",1200,"China"),("Beans",1500,"China"),("Orange",4000,"China"),
       ("Banana",2000,"Canada"),("Carrots",2000,"Canada"),("Beans",2000,"Mexico"))
 
+
+
     import spark.sqlContext.implicits._
     val df = data.toDF("Product","Amount","Country")
     df.show()
 
     //pivot
-    val pivotDF = df.groupBy("Product").pivot("Country").sum("Amount")
+    val pivotDF = df.groupBy("Product","Country")
+      .sum("Amount")
+      .groupBy("Product")
+      .pivot("Country")
+      .sum("sum(Amount)")
     pivotDF.show()
 
+//    val countries = Seq("USA","China","Canada","Mexico")
+//    val pivotDF2 = df.groupBy("Product").pivot("Country", countries).sum("Amount")
+//    pivotDF2.show()
+
     //unpivot
-    val unPivotDF = pivotDF.select($"Product",expr("stack(3, 'Canada', Canada, 'China', China, 'Mexico', Mexico) " +
-      "as (Country,Total)")).where("Total is not null")
-    unPivotDF.show()
+    //val unPivotDF = pivotDF.select($"Product",expr("stack(3, 'Canada', Canada, 'China', China, 'Mexico', Mexico) " +
+      //"as (Country,Total)")).where("Total is not null")
+    //unPivotDF.show()
 
     }
 }

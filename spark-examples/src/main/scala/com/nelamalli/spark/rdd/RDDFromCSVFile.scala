@@ -17,7 +17,7 @@ object RDDFromCSVFile {
       .getOrCreate()
     val sc = spark.sparkContext
 
-    val rdd = sc.textFile("C://000_Projects/opt/BigData/zipcodes-noheader.csv")
+    val rdd = sc.textFile("src/main/resources/zipcodes-noheader.csv")
 
     val rdd2:RDD[ZipCode] = rdd.map(row=>{
      val strArray = splitString(row)

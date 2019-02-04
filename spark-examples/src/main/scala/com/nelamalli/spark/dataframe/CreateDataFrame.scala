@@ -14,37 +14,35 @@ object CreateDataFrame {
 
     import spark.implicits._
 
-    val header = Seq("col1","col2")
-    val fields = header
-      .map(fieldName => StructField(fieldName, StringType, nullable = true))
-    val schema = StructType(fields)
-
-    val data = Seq(("Databricks", "20000"), ("Spark", "100000"), ("Hadoop", "3000"))
-    val rowData = data
-      .map(attributes => Row(attributes._1, attributes._2))
-
+    val columns = Seq("language","users_count")
+    val data = Seq(("Java", "20000"), ("Python", "100000"), ("Scala", "3000"))
     val rdd = spark.sparkContext.parallelize(data)
-    //convert RDD[T] to RDD[Row]
-    val rowRDD = rdd.map(attributes => Row(attributes._1, attributes._2))
+
 
     //From RDD (USING toDF())
-    val dfFromRDD1 = rdd.toDF("col1","col2")
-
+    val dfFromRDD1 = rdd.toDF("language","users")
     //From RDD (USING createDataFrame)
-    val dfFromRDD2 = spark.createDataFrame(rdd).toDF(header:_*)
+    val dfFromRDD2 = spark.createDataFrame(rdd).toDF(columns:_*)
 
     //From RDD (USING createDataFrame and Adding schema using StructType)
+    val schema = StructType(columns
+      .map(fieldName => StructField(fieldName, StringType, nullable = true)))
+    //convert RDD[T] to RDD[Row]
+    val rowRDD = rdd.map(attributes => Row(attributes._1, attributes._2))
     val dfFromRDD3 = spark.createDataFrame(rowRDD,schema)
+
 
     //From Data (USING toDF())
     val dfFromData1 = data.toDF()
 
     //From Data (USING createDataFrame)
-    var dfFromData2 = spark.createDataFrame(data).toDF(header:_*)
+    var dfFromData2 = spark.createDataFrame(data).toDF(columns:_*)
 
     //From Data (USING createDataFrame and Adding schema using StructType)
     import scala.collection.JavaConversions._
     //import scala.collection.JavaConverters._
+    val rowData = data
+      .map(attributes => Row(attributes._1, attributes._2))
     var dfFromData3 = spark.createDataFrame(rowData,schema)
 
     //From Data (USING createDataFrame and Adding bean class)
