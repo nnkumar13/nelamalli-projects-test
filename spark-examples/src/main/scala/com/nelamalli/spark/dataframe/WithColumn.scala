@@ -2,7 +2,7 @@ package com.nelamalli.spark.dataframe
 
 import org.apache.spark.sql.SparkSession
 
-object DataFrameWithColumn {
+object WithColumn {
 
   def main(args:Array[String]):Unit= {
 

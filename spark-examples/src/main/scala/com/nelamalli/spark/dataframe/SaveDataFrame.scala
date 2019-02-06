@@ -2,7 +2,7 @@ package com.nelamalli.spark.dataframe
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
-object DataFrameSave {
+object SaveDataFrame {
 
   def main(args: Array[String]): Unit = {
     val spark: SparkSession = SparkSession.builder()

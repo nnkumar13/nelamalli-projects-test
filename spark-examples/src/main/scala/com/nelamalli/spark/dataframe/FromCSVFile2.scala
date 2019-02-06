@@ -2,7 +2,7 @@ package com.nelamalli.spark.dataframe
 
 import org.apache.spark.sql.SparkSession
 
-object DataFrameFromCSVFile2 {
+object FromCSVFile2 {
 
   def main(args:Array[String]):Unit= {
 
