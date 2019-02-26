@@ -56,8 +56,15 @@ object WhenOtherwise {
 
     dataDF.withColumn("new_column",
        when(col("code") === "a" || col("code") === "d", "A")
-      .when(col("code") === "b" && col("amt") === "4", "B")
+      .when(col("code") === "b" and col("amt") === "4", "B")
       .otherwise("A1"))
+      .show()
+
+    //alternatively, we can also use "and" "or" operators
+    dataDF.withColumn("new_column",
+      when(col("code") === "a" or col("code") === "d", "A")
+        .when(col("code") === "b" and col("amt") === "4", "B")
+        .otherwise("A1"))
       .show()
 
   }

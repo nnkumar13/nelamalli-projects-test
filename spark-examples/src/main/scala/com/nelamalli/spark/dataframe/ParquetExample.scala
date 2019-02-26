@@ -1,7 +1,6 @@
 package com.nelamalli.spark.dataframe
 
-import org.apache.spark.sql.{Row, SparkSession}
-import org.apache.spark.sql.types.{IntegerType, StringType, StructType}
+import org.apache.spark.sql.SparkSession
 
 object ParquetExample {
 
@@ -9,7 +8,7 @@ object ParquetExample {
 
     val spark: SparkSession = SparkSession.builder()
       .master("local[1]")
-      .appName("SparkByExample")
+      .appName("SparkByExamples.com")
       .getOrCreate()
 
     val data = Seq(("James ","","Smith","36636","M",3000),
