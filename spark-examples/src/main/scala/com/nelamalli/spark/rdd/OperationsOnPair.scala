@@ -4,7 +4,7 @@ import org.apache.spark.sql.SparkSession
 
 import scala.collection.mutable
 
-object RDDOperationsOnPair {
+object OperationsOnPair {
 
   def main(args: Array[String]): Unit = {
 
