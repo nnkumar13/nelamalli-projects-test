@@ -10,6 +10,7 @@ object ReadDataFromKafka {
       .master("local[1]")
       .appName("https://SparkByExamples.com")
       .getOrCreate()
+
     val df = spark
       .read
       .format("kafka")
