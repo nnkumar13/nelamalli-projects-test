@@ -2,7 +2,7 @@ package com.nelamalli.spark.dataframe
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
-object DataFrameUDF {
+object UDFDataFrame {
   def main(args:Array[String]): Unit = {
 
     val spark:SparkSession = SparkSession.builder()

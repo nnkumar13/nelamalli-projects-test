@@ -3,7 +3,7 @@ package com.nelamalli.spark.rdd
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
 
-object RDDWordCount {
+object WordCount {
 
 
   def main(args:Array[String]): Unit = {

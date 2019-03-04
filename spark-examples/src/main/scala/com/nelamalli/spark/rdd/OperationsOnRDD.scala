@@ -2,7 +2,7 @@ package com.nelamalli.spark.rdd
 
 import org.apache.spark.sql.SparkSession
 
-object RDDOperations {
+object OperationsOnRDD {
 
   def main(args: Array[String]): Unit = {
 
