@@ -12,6 +12,7 @@ class AnotherExample {
       .appName("SparkByExamples.com")
       .getOrCreate()
 
+    // nested structure
     val data = Seq(Row(Row("James ","","Smith"),"36636","M",3000),
       Row(Row("Michael ","Rose",""),"40288","M",4000),
       Row(Row("Robert ","","Williams"),"42114","M",4000),

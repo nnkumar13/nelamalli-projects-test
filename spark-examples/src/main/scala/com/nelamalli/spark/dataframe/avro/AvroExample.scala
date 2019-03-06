@@ -1,9 +1,9 @@
-package com.nelamalli.spark.dataframe
+package com.nelamalli.spark.dataframe.avro
 
-import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.types.{IntegerType, StringType, StructType}
+import org.apache.spark.sql.{Row, SparkSession}
 
-object AvroReadWrite {
+object AvroExample {
 
   def main(args: Array[String]): Unit = {
 
@@ -30,8 +30,13 @@ object AvroReadWrite {
       .add("salary",IntegerType)
 
     val df = spark.createDataFrame(spark.sparkContext.parallelize(data),schema)
+    //val readFromHf = spark.read.format("com.databricks.spark.avro")
+    // .load("C:\\Users\\a03078a\\DataFabric\\Workspace\\bureau-australia-app\\acceptance\\accepted\\TEL_11102018_0011111_MVP_TEST.csv.6508434824099390398\\part-00000-b34d116a-87ae-4c76-b0c5-ebdeb8147116-c000.avro")
+    //readFromHf.printSchema()
 
-    //spark.sparkContext.addJar("C:\\apps\\opt\\spark-2.4.0-bin-hadoop2.7\\spark-2.4.0-bin-hadoop2.7\\jars\\avro-1.8.2.jar")
     df.write.format("avro").save("C:/tmp/spark_out/avro/namesAndFavColors.avro")
+    // df.write.format("org.apache.spark.sql.avro").save("C:/tmp/spark_out/avro/namesAndFavColors.avro")
+
+
   }
 }

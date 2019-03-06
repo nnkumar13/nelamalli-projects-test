@@ -12,6 +12,7 @@
     <module>spark-examples</module>
     <module>spark-kafka</module>
     <module>spark-streaming</module>
+      <module>spark-avro-examples</module>
   </modules>
   <properties>
     <scala.version>2.11.11</scala.version>
