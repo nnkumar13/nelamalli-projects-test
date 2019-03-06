@@ -1,0 +1,31 @@
+{
+  "type": "record",
+  "name": "Person",
+  "namespace": "com.nelamalli",
+  "fields": [
+    {
+      "name": "firstname",
+      "type": "string"
+    },
+    {
+      "name": "middlename",
+      "type": "string"
+     },
+    {
+      "name": "lastname",
+      "type": "string"
+    },
+    {
+      "name": "dob",
+      "type": "string"
+    },
+    {
+      "name": "gender",
+      "type": "string"
+    },
+    {
+      "name": "salary",
+      "type": "int"
+    }
+  ]
+}
