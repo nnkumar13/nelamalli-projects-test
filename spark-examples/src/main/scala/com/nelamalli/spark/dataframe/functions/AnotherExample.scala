@@ -12,30 +12,25 @@ class AnotherExample {
       .appName("SparkByExamples.com")
       .getOrCreate()
 
-    // nested structure
-    val data = Seq(Row(Row("James ","","Smith"),"36636","M",3000),
-      Row(Row("Michael ","Rose",""),"40288","M",4000),
-      Row(Row("Robert ","","Williams"),"42114","M",4000),
-      Row(Row("Maria ","Anne","Jones"),"39192","F",4000),
-      Row(Row("Jen","Mary","Brown"),"","F",-1)
+    /**
+      * Simple using columns list
+      */
+    val data = Seq(("James ","","Smith","2018","01","M",3000),
+      ("Michael ","Rose","","2010","03","M",4000),
+      ("Robert ","","Williams","2010","03","M",4000),
+      ("Maria ","Anne","Jones","2005","05","F",4000),
+      ("Jen","Mary","Brown","2010","07","",-1)
     )
 
-    val schema = new StructType()
-      .add("name",new StructType()
-        .add("firstname",StringType)
-        .add("middlename",StringType)
-        .add("lastname",StringType))
-      .add("dob",StringType)
-      .add("gender",StringType)
-      .add("salary",IntegerType)
+    val columns = Seq("firstname","middlename","lastname","dob_year","dob_month","gender","salary")
+    import spark.sqlContext.implicits._
+    val df = data.toDF(columns:_*)
 
-    val df = spark.createDataFrame(spark.sparkContext.parallelize(data),schema)
-
-    val data2 = Seq(("James ","","Smith","36636","M",3000),
-      ("Michael ","Rose","","40288","M",4000),
-      ("Robert ","","Williams","42114","M",4000),
-      ("Maria ","Anne","Jones","39192","F",4000),
-      ("Jen","Mary","Brown","","F",-1)
+    val data2 = Seq(Row("James ","","Smith","36636","M",3000),
+      Row("Michael ","Rose","","40288","M",4000),
+      Row("Robert ","","Williams","42114","M",4000),
+      Row("Maria ","Anne","Jones","39192","F",4000),
+      Row("Jen","Mary","Brown","","F",-1)
     )
 
     val schema2 = new StructType()
@@ -46,18 +41,50 @@ class AnotherExample {
       .add("gender",StringType)
       .add("salary",IntegerType)
 
-   // val df2 = data2.toDF()
-
-    val data3 = Seq(("James ","","Smith","36636","M",3000),
-      ("Michael ","Rose","","40288","M",4000),
-      ("Robert ","","Williams","42114","M",4000),
-      ("Maria ","Anne","Jones","39192","F",4000),
-      ("Jen","Mary","Brown","","F",-1)
+    /**
+      * schema using Row data
+      */
+    val data3 = Seq(Row("James ","","Smith","36636","M",3000),
+      Row("Michael ","Rose","","40288","M",4000),
+      Row("Robert ","","Williams","42114","M",4000),
+      Row("Maria ","Anne","Jones","39192","F",4000),
+      Row("Jen","Mary","Brown","","F",-1)
     )
 
-    val columns = Seq("firstname","middlename","lastname","dob","gender","salary")
-    import spark.sqlContext.implicits._
-    val df3 = data3.toDF(columns:_*)
+    val schema3 = new StructType()
+      .add("firstname",StringType)
+      .add("middlename",StringType)
+      .add("lastname",StringType)
+      .add("dob",StringType)
+      .add("gender",StringType)
+      .add("salary",IntegerType)
+
+    val df3 = spark.createDataFrame(spark.sparkContext.parallelize(data3),schema3)
+
+    /**
+     * nested structure schema
+     */
+    val data4 = Seq(Row(Row("James ","","Smith"),"36636","M",3000),
+      Row(Row("Michael ","Rose",""),"40288","M",4000),
+      Row(Row("Robert ","","Williams"),"42114","M",4000),
+      Row(Row("Maria ","Anne","Jones"),"39192","F",4000),
+      Row(Row("Jen","Mary","Brown"),"","F",-1)
+    )
+
+    val schema4 = new StructType()
+      .add("name",new StructType()
+        .add("firstname",StringType)
+        .add("middlename",StringType)
+        .add("lastname",StringType))
+      .add("dob",StringType)
+      .add("gender",StringType)
+      .add("salary",IntegerType)
+
+    val df4 = spark.createDataFrame(spark.sparkContext.parallelize(data4),schema4)
+
+
+
+
 
   }
 }

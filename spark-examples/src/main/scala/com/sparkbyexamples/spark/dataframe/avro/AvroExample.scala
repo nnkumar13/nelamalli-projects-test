@@ -1,4 +1,4 @@
-package com.nelamalli.spark.dataframe.avro
+package com.sparkbyexamples.spark.dataframe.avro
 
 import org.apache.spark.sql.types.{IntegerType, StringType, StructType}
 import org.apache.spark.sql.{Row, SparkSession}
