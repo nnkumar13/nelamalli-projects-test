@@ -1,4 +1,4 @@
-package com.nelamalli.spark.streaming.batch
+package com.sparkbyexamples.spark.streaming.batch
 import org.apache.spark.sql.SparkSession
 object WriteDataFrameToKafka {
 

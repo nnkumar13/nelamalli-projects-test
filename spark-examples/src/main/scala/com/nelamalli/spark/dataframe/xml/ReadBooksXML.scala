@@ -1,6 +1,6 @@
-package com.nelamalli.spark.dataframe.xml
+package com.sparkbyexamples.spark.dataframe.xml
 
-import com.nelamalli.spark.beans.BooksDiscounted
+import com.sparkbyexamples.spark.beans.BooksDiscounted
 import org.apache.spark.sql.{DataFrame, Encoders, Row, SparkSession}
 
 object ReadBooksXML {

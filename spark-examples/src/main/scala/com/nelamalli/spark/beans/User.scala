@@ -1,4 +1,4 @@
-package com.nelamalli.spark.beans
+package com.sparkbyexamples.spark.beans
 
 class User() {
   private var name:String = ""

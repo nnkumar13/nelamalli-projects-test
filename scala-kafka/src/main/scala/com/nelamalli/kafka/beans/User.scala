@@ -1,4 +1,4 @@
-package com.nelamalli.kafka.beans
+package com.sparkbyexamples.kafka.beans
 
 class User() {
   private var name:String = ""

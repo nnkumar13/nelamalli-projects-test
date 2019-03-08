@@ -1,4 +1,4 @@
-package com.nelamalli.spark.dataset.xml
+package com.sparkbyexamples.spark.dataset.xml
 
 import org.apache.spark.sql.functions.{col, explode}
 import org.apache.spark.sql.{SQLContext, SparkSession}

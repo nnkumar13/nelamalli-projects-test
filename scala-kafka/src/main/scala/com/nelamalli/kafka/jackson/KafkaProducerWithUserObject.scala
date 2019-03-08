@@ -1,14 +1,14 @@
-package com.nelamalli.kafka.jackson
+package com.sparkbyexamples.kafka.jackson
 import java.util.Properties
 
-import com.nelamalli.kafka.beans.User
+import com.sparkbyexamples.kafka.beans.User
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 import org.apache.kafka.common.serialization.StringSerializer
 object KafkaProducerWithUserObject {
   val props:Properties = new Properties()
   props.put("bootstrap.servers","192.168.1.100:9092")
   props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer")
-  props.put("value.serializer","com.nelamalli.kafka.jackson.UserSerializer")
+  props.put("value.serializer","com.sparkbyexamples.kafka.jackson.UserSerializer")
   props.put("acks","all")
   val producer = new KafkaProducer[String, User](props)
   try{

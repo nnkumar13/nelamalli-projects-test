@@ -1,8 +1,8 @@
-package com.nelamalli.kafka.jackson
+package com.sparkbyexamples.kafka.jackson
 
 import java.util
 
-import com.nelamalli.kafka.beans.User
+import com.sparkbyexamples.kafka.beans.User
 import org.apache.kafka.common.serialization.Serializer
 import org.codehaus.jackson.map.ObjectMapper
 

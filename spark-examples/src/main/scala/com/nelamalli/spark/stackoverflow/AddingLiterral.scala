@@ -1,4 +1,4 @@
-package com.nelamalli.spark.stackoverflow
+package com.sparkbyexamples.spark.stackoverflow
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.types.{DoubleType, StringType, StructField, StructType}

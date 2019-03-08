@@ -1,4 +1,4 @@
-package com.nelamalli.spark
+package com.sparkbyexamples.spark
 
 import org.apache.spark.sql.SparkSession
 

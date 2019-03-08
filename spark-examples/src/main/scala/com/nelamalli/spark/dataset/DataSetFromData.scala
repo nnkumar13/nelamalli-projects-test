@@ -1,4 +1,4 @@
-package com.nelamalli.spark.dataset
+package com.sparkbyexamples.spark.dataset
 
 import org.apache.spark.sql.SparkSession
 

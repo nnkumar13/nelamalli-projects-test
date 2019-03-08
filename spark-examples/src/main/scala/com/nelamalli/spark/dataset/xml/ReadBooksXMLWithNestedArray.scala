@@ -1,6 +1,6 @@
-package com.nelamalli.spark.dataset.xml
+package com.sparkbyexamples.spark.dataset.xml
 
-import com.nelamalli.spark.beans.{Books, BooksWithArray}
+import com.sparkbyexamples.spark.beans.{Books, BooksWithArray}
 import org.apache.spark.sql.{SparkSession, functions}
 
 object ReadBooksXMLWithNestedArray {

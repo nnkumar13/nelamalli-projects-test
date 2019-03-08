@@ -1,4 +1,4 @@
-package com.nelamalli.kafka
+package com.sparkbyexamples.kafka
 
 import java.util
 import java.util.Properties

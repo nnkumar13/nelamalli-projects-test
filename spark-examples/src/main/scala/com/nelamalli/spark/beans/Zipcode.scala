@@ -1,4 +1,4 @@
-package com.nelamalli.spark.beans
+package com.sparkbyexamples.spark.beans
 
 import scala.beans.BeanProperty
 

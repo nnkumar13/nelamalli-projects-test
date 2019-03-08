@@ -1,4 +1,4 @@
-//package com.nelamalli
+//package com.sparkbyexamples
 //
 //import org.apache.spark.sql.SparkSession
 //

@@ -1,4 +1,4 @@
-package com.nelamalli.spark.streaming
+package com.sparkbyexamples.spark.streaming
 
 object SparkStreamingForeachRDD_ {
 

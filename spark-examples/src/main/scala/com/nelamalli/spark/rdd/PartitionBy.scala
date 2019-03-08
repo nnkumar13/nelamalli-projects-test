@@ -1,4 +1,4 @@
-package com.nelamalli.spark.rdd
+package com.sparkbyexamples.spark.rdd
 
 import org.apache.spark.HashPartitioner
 import org.apache.spark.rdd.RDD

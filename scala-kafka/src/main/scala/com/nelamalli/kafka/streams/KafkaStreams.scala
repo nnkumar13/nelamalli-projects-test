@@ -1,4 +1,4 @@
-//package com.nelamalli.kafka.streams
+//package com.sparkbyexamples.kafka.streams
 //
 //import java.util.Properties
 //import java.util.concurrent.TimeUnit

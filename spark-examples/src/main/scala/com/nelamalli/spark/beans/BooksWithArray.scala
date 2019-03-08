@@ -1,4 +1,4 @@
-package com.nelamalli.spark.beans
+package com.sparkbyexamples.spark.beans
 
 case class BooksWithArray(_id:String, author:String, description:String, price:Double, publish_date:String, title:String,otherInfo:OtherInfo,stores:Stores)
 case class OtherInfo(pagesCount:String,language:String,country:String,address:Address)

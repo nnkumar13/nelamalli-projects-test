@@ -1,6 +1,6 @@
-package com.nelamalli.spark.dataframe.xml
+package com.sparkbyexamples.spark.dataframe.xml
 
-import com.nelamalli.spark.beans.BooksWithArray
+import com.sparkbyexamples.spark.beans.BooksWithArray
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema
 import org.apache.spark.sql.types.StructType

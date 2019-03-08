@@ -1,4 +1,4 @@
-package com.nelamalli.spark.dataframe.xml
+package com.sparkbyexamples.spark.dataframe.xml
 
 import com.thoughtworks.xstream.XStream
 import com.thoughtworks.xstream.io.xml.DomDriver

@@ -1,4 +1,4 @@
-package com.nelamalli.spark.dataframe
+package com.sparkbyexamples.spark.dataframe
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._

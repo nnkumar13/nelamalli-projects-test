@@ -1,4 +1,4 @@
-//package com.nelamalli.kafka.avro
+//package com.sparkbyexamples.kafka.avro
 //
 //import java.util.Properties
 //

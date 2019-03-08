@@ -1,4 +1,4 @@
-package com.nelamalli.kafka
+package com.sparkbyexamples.kafka
 import java.util.Properties
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 object KafkaProducerApp extends App {
@@ -12,7 +12,7 @@ object KafkaProducerApp extends App {
   val topic = "text_topic"
   try {
     for (i <- 0 to 15) {
-      val record = new ProducerRecord[String, String](topic, i.toString, "My Site is nelamalli.com " + i)
+      val record = new ProducerRecord[String, String](topic, i.toString, "My Site is sparkbyexamples.com " + i)
       val metadata = producer.send(record)
       printf(s"sent record(key=%s value=%s) " +
         "meta(partition=%d, offset=%d)\n",
